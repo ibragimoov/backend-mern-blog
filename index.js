@@ -1,7 +1,7 @@
 import express from "express";
 import fs from "fs";
 import multer from "multer";
-import cors from "cors";
+const cors = require("cors");
 
 import mongoose from "mongoose";
 
@@ -38,7 +38,7 @@ const upload = multer({ storage });
 app.use(express.json());
 app.use(
     cors({
-        origin: "https://backend-mern-blog.herokuapp.com/",
+        origin: "https://backend-mern-blog.herokuapp.com",
     })
 );
 app.use("/upload", express.static("src/upload"));
