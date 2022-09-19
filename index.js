@@ -36,7 +36,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        origin: "https://backend-mern-blog.herokuapp.com/",
+    })
+);
 app.use("/upload", express.static("src/upload"));
 
 app.post(
